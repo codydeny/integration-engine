@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+
+from collect import views
+
+router = DefaultRouter()
+router.register(r'integration', views.IntegrationActionViewSet)
+router.register(r'form', views.FormViewSet)
+router.register(r'response', views.ResponseViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('auth/', include('rest_framework.urls')),
-    path('collect/', include('collect.urls')),
-]
+        path('integrations/', views.ListIntegrations.as_view()),
+        path('form/submit/', views.SubmitForm.as_view()),
+] + router.urls
