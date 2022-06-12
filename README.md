@@ -1,4 +1,8 @@
 # Altan Internship Task Readme
+* [Design Diagrams](design_docs.md)
+* [integration docs](integration-docs.md)
+* [design explaination](design-explaination.md)
+
 ## Langauge Used
 * Python
 ## Technologies Used
